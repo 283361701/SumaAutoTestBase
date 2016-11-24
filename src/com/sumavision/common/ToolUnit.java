@@ -1,4 +1,4 @@
-package com.sumavison.common;
+package com.sumavision.common;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

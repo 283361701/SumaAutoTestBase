@@ -1,4 +1,4 @@
-package com.sumavison.common;
+package com.sumavision.common;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

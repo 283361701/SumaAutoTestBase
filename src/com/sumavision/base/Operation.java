@@ -20,9 +20,9 @@ import javax.imageio.stream.ImageInputStream;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 
-import com.sumavison.common.CmdConfig;
-import com.sumavison.common.CmdUnit;
-import com.sumavison.common.ToolUnit;
+import com.sumavision.common.CmdConfig;
+import com.sumavision.common.CmdUnit;
+import com.sumavision.common.ToolUnit;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -133,7 +133,7 @@ public class Operation {
 	 * @param width
 	 * @param height
 	 */
-	public void takeScreenShot(int x, int y, int width, int height ) {
+	public String takeScreenShot(int x, int y, int width, int height ) {
 		//截图动作
 		File scrFile = this.driver.getScreenshotAs(OutputType.FILE);
 		//文件命名
@@ -155,12 +155,13 @@ public class Operation {
 			System.err.println("未截图成功");
 			e.printStackTrace();
 		}
+		return RESULT_IMAGE_PATH + imageName;
 	}
-	public void takeScreenShot() {
+	public String takeScreenShot() {
 		ElementPage ePage = new ElementPage(this.driver);
 		int width = ePage.getScreenWidth();
 		int height = ePage.getScreenHeight();
-		takeScreenShot(0, 0, width, height);
+		return takeScreenShot(0, 0, width, height);
 	}
 	/**
 	 * 调用摄像头，true 打开并开始录制  false 结束录制

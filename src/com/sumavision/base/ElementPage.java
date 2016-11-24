@@ -14,7 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 
-import com.sumavison.common.HumingImageSame;
+import com.sumavision.common.HumingImageSame;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -166,6 +166,11 @@ public class ElementPage {
 	
 	public boolean isIamgeSame(String imgPath1, String imgPath2) throws IOException {
 		return isImageSame(imgPath1, imgPath2, 0.9);
+	}
+	
+	public boolean isIamgeSam(String imgPath1)throws IOException {
+		Operation operation = new Operation(driver);
+		return isImageSame(imgPath1, operation.takeScreenShot(), 0.9);
 	}
 	
 	//查找元素

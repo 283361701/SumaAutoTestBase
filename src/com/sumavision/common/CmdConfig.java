@@ -1,4 +1,4 @@
-package com.sumavison.common;
+package com.sumavision.common;
 
 public interface CmdConfig {
 
